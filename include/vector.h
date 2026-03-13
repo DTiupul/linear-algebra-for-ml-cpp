@@ -7,9 +7,9 @@
     public:
         std::vector<double> data;
         Vector(int n);
-        double dot(const Vector& other) ;
+        double operator*(const Vector& other) const;
         double norm() const;
-        Vector add(const Vector& other);
-        Vector substract(const Vector& other);
+        Vector operator+(const Vector& other);
+        Vector operator-(const Vector& other);
         double cosine_similarity(const Vector& other);
  };

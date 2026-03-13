@@ -4,7 +4,7 @@ Vector::Vector(int n){
     data.resize(n);
 }
 
-double Vector::dot(const Vector& other){
+double Vector::operator*(const Vector& other) const{
     double dot_result = 0;
     for(int i = 0; i < data.size(); i++){
         dot_result += data[i] * other.data[i];
@@ -20,7 +20,7 @@ double Vector::norm() const{
     return sqrt(norm_result);
 }
 
-Vector Vector::add(const Vector& other){
+Vector Vector::operator+(const Vector& other){
     Vector add_result(data.size());
 
     for(int i = 0;i < data.size(); i++){
@@ -29,7 +29,7 @@ Vector Vector::add(const Vector& other){
     return add_result;
 }
 
-Vector Vector::substract(const Vector& other){
+Vector Vector::operator-(const Vector& other){
     Vector substract_result(data.size());
 
     for(int i = 0;i < data.size(); i++){
@@ -40,7 +40,7 @@ Vector Vector::substract(const Vector& other){
 }
 
 double Vector::cosine_similarity(const Vector& other){
-    double dot_product = dot(other);
+    double dot_product = operator*(other);
     double norm_a = norm();
     double norm_b = other.norm();
 
