@@ -44,4 +44,5 @@ int main(){
     std::cout << std::endl;
 
     std::cout << "cosine similarity between a and b is: " << a.cosine_similarity(b) << std::endl;
+
 }
