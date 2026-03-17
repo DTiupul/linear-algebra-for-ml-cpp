@@ -4,7 +4,7 @@ echo =============================
 echo Building linear-algebra-for-ml-cpp
 echo =============================
 
-g++ examples\vector_main.cpp src\*.cpp -Iinclude -o programa
+g++ examples\neural_network_simulation.cpp src\*.cpp -Iinclude -o programa
 
 if %errorlevel% neq 0 (
     echo.

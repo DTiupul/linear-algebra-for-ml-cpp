@@ -11,6 +11,6 @@ public:
     Matrix(int r, int c);
   
     Matrix multiply(const Matrix& other);
-    Vector multiply(const Vector& other);
+    Vector operator*(const Vector& v);
     Matrix transpose();
 };

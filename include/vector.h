@@ -1,11 +1,11 @@
  #pragma once
  #include <vector>
  #include <math.h>
-
+ using namespace std;
 
  class Vector{
     public:
-        std::vector<double> data;
+        vector<double> data;
         Vector(int n);
         double operator*(const Vector& other) const;
         double norm() const;

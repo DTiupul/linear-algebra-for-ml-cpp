@@ -27,6 +27,18 @@ Matrix Matrix::multiply(const Matrix& other){
            
 }
 
-Matrix Matrix::transpose(){
-    
+Vector Matrix::operator*(const Vector& v){
+    if(cols != v.data.size()){
+        __throw_invalid_argument("Dimension mismatch");
+    }
+
+    Vector result(rows);
+
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < cols; j++){
+            result.data[i] += v.data[j] * data[i][j];
+        }
+    }
+
+    return result;
 }
