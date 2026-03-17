@@ -28,5 +28,11 @@ Matrix Matrix::multiply(const Matrix& other){
 }
 
 Matrix Matrix::transpose(){
-    
+    Matrix T(data[0].size(),data.size());
+    for(int i = 0; i < data[0].size(); i++){
+        for(int j = 0; j < data.size(); j++){
+           T.data[j][i] = data[i][j]; 
+        }
+    }
+    return T; 
 }

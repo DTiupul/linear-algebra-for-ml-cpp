@@ -4,7 +4,7 @@
 void ingresarDatosMatriz(Matrix& M){
     for(int i = 0; i < M.rows; i++){
         for(int j = 0; j < M.cols; j++){
-            cout << "[" << i << "," << j << "] = ";
+            cout << "[" << i + 1 << "," << j + 1 << "] = ";
             cin >> M.data[i][j];
         }
     }
@@ -13,7 +13,7 @@ void ingresarDatosMatriz(Matrix& M){
 void imprimirMatriz(Matrix& M){
     for(int i = 0; i < M.rows; i++){
         for(int j = 0; j < M.cols; j++){
-            cout << "[" << i << "," << j << "] = " << M.data[i][j] << endl;
+            cout << "[" << i + 1<< "," << j + 1<< "] = " << M.data[i][j] << endl;
         }
     }
 }
@@ -38,10 +38,11 @@ int main(){
     
     Matrix D = B.multiply(A);
     cout << "B x A (matricial product) is: " << endl;
-    for(int i = 0; i < D.rows; i++){
-        for(int j = 0; j < D.cols; j++){
-            cout << "D[" << i << "," << j << "] = " << D.data[i][j] << endl;
-        }
-    }
+    imprimirMatriz(D);
+
+    cout << endl;
+    cout << "transpose Matrix: " << endl;
+    Matrix trans = D.transpose();
+    imprimirMatriz(trans);
     
 }
